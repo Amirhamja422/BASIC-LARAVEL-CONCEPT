@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GreetingController;
+use App\Http\Controllers\PostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +45,6 @@ Route::get('/user/{id?}/{name?}', function ($userid=null,$userName=null) {
 });
 
 
-//Route::get('/user', [UserController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/gret/{title}', [GreetingController::class, 'showMsg']);
+

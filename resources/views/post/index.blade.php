@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{$greetings}}</h1>
+  <p>i am from post controllerssss</p>  
 </body>
 </html>

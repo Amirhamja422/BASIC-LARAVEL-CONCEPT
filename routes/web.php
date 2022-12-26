@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GreetingController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\SingleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,14 +38,30 @@ use App\Http\Controllers\PostController;
 // });
 
 
-Route::get('/user/{id?}/{name?}', function ($userid=null,$userName=null) {
-    return view('user.index',
-    ['UserId'=>$userid,
-    'UserName'=>$userName,
-   ]);
-});
+// Route::get('/user/{id?}/{name?}', function ($userid=null,$userName=null) {
+//     return view('user.index',
+//     ['UserId'=>$userid,
+//     'UserName'=>$userName,
+//    ]);
+// });
 
 
-Route::get('/posts', [PostController::class, 'index']);
-Route::get('/gret/{title}', [GreetingController::class, 'showMsg']);
+// Route::get('/posts', [PostController::class, 'index']);
+// Route::get('/gret/{title}', [GreetingController::class, 'showMsg']);
+
+// resource controller er jonno route
+
+//Route::resource('photos', PhotoController::class);
+
+//rout for single controller 
+
+Route::get('single', SingleController::class);
+
+
+
+
+
+
+
+
 

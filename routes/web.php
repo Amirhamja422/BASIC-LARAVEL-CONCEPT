@@ -57,7 +57,8 @@ use App\Http\Controllers\SingleController;
 
 //Route::get('single', SingleController::class);
 
-Route::get('/creates', [PostController::class, 'create']);
+Route::get('post/create', [PostController::class, 'create']);
+Route::POST('post/store', [PostController::class, 'store']);
 
 
 

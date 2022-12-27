@@ -55,11 +55,9 @@ use App\Http\Controllers\SingleController;
 
 //rout for single controller 
 
-Route::get('single', SingleController::class);
+//Route::get('single', SingleController::class);
 
-
-
-
+Route::get('/creates', [PostController::class, 'create']);
 
 
 

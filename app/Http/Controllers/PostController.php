@@ -13,10 +13,18 @@ class PostController extends Controller
    // }
 
 
+   public function index(){
+      $data['gyy'] = DB::table('test')->get();
+      //dd($data);
+      //return view('post/index',$data);
+     }
+  
+
    public function create(){
       return view('post/create');
      }
   
+
    public function store(Request $request){
       $data['name'] = $request->name;
       $data['email'] = $request->email;

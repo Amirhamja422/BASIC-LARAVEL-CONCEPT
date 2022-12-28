@@ -60,7 +60,7 @@ use App\Http\Controllers\SingleController;
 Route::get('post/create', [PostController::class, 'create']);
 Route::POST('post/store', [PostController::class, 'store']);
 
-Route::get('post/posts', [PostController::class, 'index']);
+Route::get('posts', [PostController::class, 'index']);
 
 
 

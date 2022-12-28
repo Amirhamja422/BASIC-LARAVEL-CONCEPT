@@ -14,9 +14,9 @@ class PostController extends Controller
 
 
    public function index(){
-      $data['gyy'] = DB::table('test')->get();
+      $data['test'] = DB::table('test')->get();
       //dd($data);
-      //return view('post/index',$data);
+     return view('post/view',$data);
      }
   
 
@@ -30,7 +30,8 @@ class PostController extends Controller
       $data['email'] = $request->email;
       DB::table('test')->insert($data);
       //dd(DB::table('test')->get());
-      return view('post/create');
+     // return view('post/create');
+     return redirect('posts');
 
 
      }

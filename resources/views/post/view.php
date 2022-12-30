@@ -30,7 +30,7 @@ table {
     <td>
       <a href="<?php echo url('post/show',$value->id); ?>">Show Details</a>
       <a href="<?php echo url('post/edit',$value->id); ?>">Edit</a> 
-      || delet</td>
+      <a href="<?php echo url('post/delete',$value->id); ?>">Delete</a> 
     </tr>
     <?php } ?>
 </table>

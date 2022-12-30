@@ -22,24 +22,36 @@ class PostController extends Controller
 
 
      
-   public function show($id){
+  public function show($id){
     $data['post'] = DB::table('test')->where('id',$id)->first();
     //dd($data);
     return view('post/show',$data);
      }
   
        
-     public function edit($id){
+  public function edit($id){
       $data['post'] = DB::table('test')->where('id',$id)->first();
       //dd($data);
       return view('post/edit',$data);
        }
 
-   public function create(){
+
+// delete data
+
+  public function delete($id){
+    DB::table('test')->where('id',$id)->delete();
+    //dd($data);
+    return redirect('posts');
+  }
+
+  // insert form run       
+  public function create(){
       return view('post/create');
      }
+
+
   // for insert
-   public function update(Request $request , $id){
+  public function update(Request $request , $id){
       $data['name'] = $request->name;
       $data['email'] = $request->email;
       DB::table('test')->where('id',$id)->update($data);
@@ -49,6 +61,9 @@ class PostController extends Controller
 
 
      }
+
+
+
   
 
 }

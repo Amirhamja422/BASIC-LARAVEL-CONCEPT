@@ -61,6 +61,11 @@ Route::get('post/create', [PostController::class, 'create']);
 Route::POST('post/store', [PostController::class, 'store']);
 
 Route::get('posts', [PostController::class, 'index']);
+Route::get('post/show/{id}', [PostController::class, 'show']);
+Route::get('post/edit/{id}', [PostController::class, 'edit']);
+Route::put('post/update/{id}', [PostController::class, 'update']);
+
+
 
 
 

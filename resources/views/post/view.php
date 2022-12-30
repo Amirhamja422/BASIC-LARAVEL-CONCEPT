@@ -27,7 +27,10 @@ table {
     <tr>
     <td><?php echo $value->name; ?></td>
     <td><?php echo $value->email; ?></td>
-    <td>show || edit || delet</td>
+    <td>
+      <a href="<?php echo url('post/show',$value->id); ?>">Show Details</a>
+      <a href="<?php echo url('post/edit',$value->id); ?>">Edit</a> 
+      || delet</td>
     </tr>
     <?php } ?>
 </table>

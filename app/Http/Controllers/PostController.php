@@ -50,7 +50,7 @@ class PostController extends Controller
      }
 
 
-  // for insert
+  // for update
   public function update(Request $request , $id){
       $data['name'] = $request->name;
       $data['email'] = $request->email;
@@ -62,8 +62,36 @@ class PostController extends Controller
 
      }
 
+// for insert
+public function store(Request $request){
+  $data['name'] = $request->name;
+  $data['email'] = $request->email;
+  DB::table('test')->insert($data);
+  //dd(DB::table('test')->get());
+ // return view('post/create');
+ return redirect('posts');
+}
 
+// learn hunter tutorial
 
-  
+ public function contact(){
+    return view('hunter/contact');
+   }
+
+   // for insert
+public function hunterstore(Request $request){
+   $validated = $request->validate([
+    'name' => 'required',
+    'email' => 'required|unique:test|max:255',
+  ]);
+ // dd($request->all());
+  // $data['name'] = $request->name;
+  // $data['email'] = $request->email;
+  // DB::table('test')->insert($data);
+  //dd(DB::table('test')->get());
+ // return view('post/create');
+//  return redirect('posts');
+}
+
 
 }

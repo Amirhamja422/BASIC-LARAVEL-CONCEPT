@@ -57,16 +57,30 @@ use App\Http\Controllers\SingleController;
 
 //Route::get('single', SingleController::class);
 
-Route::get('post/create', [PostController::class, 'create']);
-Route::POST('post/store', [PostController::class, 'store']);
+//route group
+// Route::prefix('admin')->group(function () {
+//controller list
+Route::controller(PostController::class)->group(function () {
 
-Route::get('posts', [PostController::class, 'index']);
-Route::get('post/show/{id}', [PostController::class, 'show']);
-Route::get('post/edit/{id}', [PostController::class, 'edit']);
-Route::put('post/update/{id}', [PostController::class, 'update']);
-Route::get('post/delete/{id}', [PostController::class, 'delete']);
+Route::get('posts', 'index')->name('post.index');
+Route::get('post/create', 'create');
+Route::post('post/store', 'store')->name('post.store');
+Route::get('post/show/{id}', 'show');
+Route::get('post/edit/{id}', 'edit');
+Route::put('post/update/{id}', 'update');
+Route::get('post/delete/{id}', 'delete');
+//learn hunter
+Route::get('hunter/contact', 'contact');
+Route::post('hunter/store', 'hunterstore')->name('hunter.store');
 
 
+});
+
+
+
+
+
+// });
 
 
 

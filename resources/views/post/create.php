@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-<form action="<?php echo url('post/store'); ?>" method="post">
+<!-- <form action="<?php echo url('post/store'); ?>" method="post"> -->
+<form action="<?php echo route('post.store'); ?>" method="post">
 <?php echo csrf_field(); ?>
   <label for="name">First name:</label><br>
   <input type="text" id="name" name="name"><br>

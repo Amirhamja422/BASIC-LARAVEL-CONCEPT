@@ -10,6 +10,8 @@
 <form action="<?php echo url('post/update',$post->id);?>" method="post">
 <?php echo csrf_field(); ?>
 <input hidden  type="text"  name="_method" value="PUT"><br>
+<!-- @csrf
+@method("PUT") -->
 
   <label for="name">First name:</label><br>
   <input type="text" id="name" name="name" value="<?php echo  $post->name;?>"><br>

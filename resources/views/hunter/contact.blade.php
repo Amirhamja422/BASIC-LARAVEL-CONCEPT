@@ -13,7 +13,7 @@
                     <!--Form with header-->
 
                     <form action="{{route('hunter.store')}}" method="post">
-                    @if ($errors->any())
+                    <!-- @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -21,7 +21,7 @@
                             @endforeach
                         </ul>
                       </div>
-                       @endif
+                       @endif -->
                         @csrf
                         <div class="card border-primary rounded-0">
                             <div class="card-header p-0">
@@ -38,7 +38,10 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
                                         </div>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name y Apellido" >
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"  placeholder="Name y Apellido"  value="{{ old('name') }}">
+                                        @error('name')
+                                         <strong class="alert alert-danger">{{ $message }}</strong>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -46,7 +49,10 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
                                         </div>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"  value="{{ old('email') }}">
+                                        @error('email')
+                                        <strong class="alert alert-danger">{{ $message }}</strong>
+                                        @enderror
                                     </div>
                                 </div>
 

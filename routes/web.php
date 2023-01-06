@@ -61,22 +61,22 @@ require __DIR__.'/auth.php';
 // });
 
 
-// Route::get('/posts', [PostController::class, 'index']);
-// Route::get('/gret/{title}', [GreetingController::class, 'showMsg']);
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/gret/{title}', [GreetingController::class, 'showMsg']);
 
-// resource controller er jonno route
-//Route::resource('photos', PhotoController::class);
+resource controller er jonno route
+Route::resource('photos', PhotoController::class);
 
-//rout for single controller
+rout for single controller
 
-//Route::get('single', SingleController::class);
+Route::get('single', SingleController::class);
 
-//route group
-// Route::prefix('admin')->group(function () {
-//controller list
-// Route::controller(PostController::class)->group(function () {
+route group
+Route::prefix('admin')->group(function () {
+controller list
+Route::controller(PostController::class)->group(function () {
 
-// Route::get('posts', 'index')->name('post.index');
+Route::get('posts', 'index')->name('post.index');
 // Route::get('post/create', 'create');
 // Route::post('post/store', 'store')->name('post.store');
 // Route::get('post/show/{id}', 'show');

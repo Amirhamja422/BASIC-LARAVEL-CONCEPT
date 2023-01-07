@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,26 +65,26 @@ require __DIR__.'/auth.php';
 // Route::get('/posts', [PostController::class, 'index']);
 // Route::get('/gret/{title}', [GreetingController::class, 'showMsg']);
 
-//resource controller er jonno route
-// Route::resource('photos', PhotoController::class);
+// resource controller er jonno route
+//Route::resource('photos', PhotoController::class);
 
 //rout for single controller
 
-// Route::get('single', SingleController::class);
+//Route::get('single', SingleController::class);
 
 //route group
 // Route::prefix('admin')->group(function () {
 //controller list
-Route::controller(PostController::class)->name('post.')->group(function () {
+    Route::controller(PostController::class)->group(function () {
+  
     Route::get('posts', 'index')->name('post.index');
     Route::get('post/create', 'create');
     Route::post('post/store', 'store')->name('post.store');
-    Route::get('post/show/{id}', 'show');
-    Route::get('post/edit/{id}', 'edit');
-    Route::put('post/update/{id}', 'update');
-    Route::get('post/delete/{id}', 'delete');
+    Route::get('post/show/{id}', 'show')->name('post.show');
+    Route::get('post/edit/{id}', 'edit')->name('post.edit');
+    Route::put('post/update/{id}', 'update')->name('post.update');
+    Route::get('post/delete/{id}', 'delete')->name('post.delete');
+    //learn hunter
+    // -Route::get('hunter/contact', 'contact');
+    // -Route::post('hunter/store', 'hunterstore')->name('hunter.store');
 });
-
-// //learn hunter
-// Route::get('hunter/contact', 'contact');
-// Route::post('hunter/store', 'hunterstore')->name('hunter.store');

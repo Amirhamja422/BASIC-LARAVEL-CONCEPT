@@ -23,16 +23,19 @@ table {
     <th>Email</th>
     <th>Action</th>
   </tr>
-    <?php foreach($test as $value){?>
-    <tr>
-    <td><?php echo $value->name; ?></td>
-    <td><?php echo $value->email; ?></td>
-    <td>
-      <a href="<?php echo url('post/show',$value->id); ?>">Show Details</a>
-      <a href="<?php echo url('post/edit',$value->id); ?>">Edit</a> 
-      <a href="<?php echo url('post/delete',$value->id); ?>">Delete</a> 
-    </tr>
-    <?php } ?>
+    <!-- <?php foreach($test as $value){?> -->
+        <!-- <?php } ?> -->
+      @foreach($test as $value)
+        <tr>
+            <td>{{ $value->name }}</td>
+            <td>{{ $value->email}}</td>
+        <td>
+              <a href="{{route('post.show',$value->id)}}">Show Details</a>
+              <a href="{{route('post.edit',$value->id) }}">Edit</a> 
+              <a href="{{route('post.delete',$value->id)}}">Delete</a> 
+        </tr>
+      @endforeach
+  
 </table>
     
 </body>

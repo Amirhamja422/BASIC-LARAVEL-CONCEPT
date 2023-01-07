@@ -15,14 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
-Route::get('/', function () {
-    return view('frontend.dashboard');
-});
+// Route::get('/', function () {
+//     return view('frontend.dashboard');
+// });
+
+
+Route::view('/', 'frontend.dashboard')->name('home');
+Route::view('/about', 'frontend.about')->name('about');
+Route::view('/contact', 'frontend.contact')->name('contact');
 
 
 

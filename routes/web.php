@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'frontend.dashboard')->name('home');
 Route::view('/about', 'frontend.about')->name('about');
+Route::view('/service', 'frontend.service')->name('service');
+Route::view('/portfolio', 'frontend.portfolio')->name('portfolio');
 Route::view('/contact', 'frontend.contact')->name('contact');
 
 

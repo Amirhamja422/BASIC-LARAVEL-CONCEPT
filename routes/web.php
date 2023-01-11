@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -24,37 +25,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('frontend.dashboard');
 // });
 
-
-Route::view('/', 'frontend.dashboard')->name('home');
-Route::view('/about', 'frontend.about')->name('about');
-Route::view('/service', 'frontend.service')->name('service');
-Route::view('/portfolio', 'frontend.portfolio')->name('portfolio');
-Route::view('/contact', 'frontend.contact')->name('contact');
-
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
-
-
-
-//  new route restored
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/greeting', function () {
-//     return 'Hello World';
-// });
 
 
 // Route::get('/user/{id?}/{name?}', function ($userid=null,$userName=null) {
@@ -89,6 +59,57 @@ require __DIR__.'/auth.php';
 //route group
 // Route::prefix('admin')->group(function () {
 //controller list
+
+
+
+
+
+///////////////////////////////////////////////// admin portal start ///////////////////////////////////////////////
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+
+Route::get('test', [CategoryController::class, 'index'])->name('class.index');;
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+///////////////////////////////////////////////// admin portal  end ///////////////////////////////////////////////
+
+
+///////////////////////////////////////////////// static web page start ///////////////////////////////////////////////
+// Route::get('/greeting', function () {
+//     return 'Hello World';
+// });
+
+// Route::view('/', 'frontend.dashboard')->name('home');
+// Route::view('/about', 'frontend.about')->name('about');
+// Route::view('/service', 'frontend.service')->name('service');
+// Route::view('/portfolio', 'frontend.portfolio')->name('portfolio');
+// Route::view('/contact', 'frontend.contact')->name('contact');
+
+
+///////////////////////////////////////////////// static web page end ///////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////// Edit update delete start ///////////////////////////////////////////////
+
     Route::controller(PostController::class)->group(function () {
   
     Route::get('posts', 'index')->name('post.index');
@@ -102,3 +123,5 @@ require __DIR__.'/auth.php';
     Route::get('hunter/contact', 'contact');
     Route::post('hunter/store', 'hunterstore')->name('hunter.store');
 });
+
+///////////////////////////////////////////////// edit update delete end ///////////////////////////////////////////////

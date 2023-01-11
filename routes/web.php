@@ -99,6 +99,6 @@ require __DIR__.'/auth.php';
     Route::put('post/update/{id}', 'update')->name('post.update');
     Route::get('post/delete/{id}', 'delete')->name('post.delete');
     //learn hunter
-    // -Route::get('hunter/contact', 'contact');
-    // -Route::post('hunter/store', 'hunterstore')->name('hunter.store');
+    Route::get('hunter/contact', 'contact');
+    Route::post('hunter/store', 'hunterstore')->name('hunter.store');
 });

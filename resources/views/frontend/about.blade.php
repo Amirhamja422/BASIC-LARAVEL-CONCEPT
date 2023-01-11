@@ -8,6 +8,7 @@
                 <hr class="divider divider-dark" />
                 <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
                 <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+                <x-header/>
             </div>
         </div>
     </div>

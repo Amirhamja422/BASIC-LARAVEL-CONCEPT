@@ -18,8 +18,27 @@ class CategoryController extends Controller
    // index method for  all class from  database 
    
    public function index(){
-    echo "ok";
+    $class = DB :: table('test')->get();
+    // dd($class);
+    //echo "ok";
+    return view('admin.class.index',compact('class'));
    }
+
+   public function create(){
+    return view('admin.class.create');
+   }
+
+// for insert
+public function store(Request $request){
+    $data['name'] = $request->name;
+    $data['email'] = $request->email;
+    DB::table('test')->insert($data);
+    return view('admin.class.create')->with('message', 'Your registration was successful');
+
+    //dd(DB::table('test')->get());
+   // return view('post/create');
+  // return redirect('posts');
+  }
 
 
 

@@ -79,7 +79,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('test', [CategoryController::class, 'index'])->name('class.index');;
+Route::get('test', [CategoryController::class, 'index'])->name('class.index');
+Route::get('create', [CategoryController::class, 'create'])->name('class.create');
+Route::post('store', [CategoryController::class, 'store'])->name('class.store');;
+
+
 
 
 

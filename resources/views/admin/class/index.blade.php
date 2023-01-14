@@ -26,8 +26,8 @@
                     <td>{{$row->name}}</td>
                     <td>{{$row->email}}</td>
                     <td>
-                        <a href="">Edit</a>
-                        <a href="">Delete</a>
+                        <a href="{{route('class.edit',$row->id)}}">Edit</a>
+                        <a href="{{route('class.delete',$row->id)}}">Delete</a>
 
                     </td>
                     </tr>

@@ -18,10 +18,11 @@
             </div>
             @endif
             <br><br>
-            <form action="{{route('class.store')}}" method="post">
-                @csrf
+            <form action="{{ route('class.update',$test->id)}}" method="post">
+            @csrf
+            @method("PUT")
                 <label for="name">Name</label>
-                <input type="name"  id="name" name="name" placeholder="Enter name">
+                <input type="name"  id="name" name="name" value="{{  $test->name }}" placeholder="Enter name">
                 <br><br>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter email">

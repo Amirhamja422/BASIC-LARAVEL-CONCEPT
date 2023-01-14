@@ -33,13 +33,34 @@ public function store(Request $request){
     $data['name'] = $request->name;
     $data['email'] = $request->email;
     DB::table('test')->insert($data);
-    return view('admin.class.create')->with('message', 'Your registration was successful');
+    return redirect()->back()->witH('message', 'Your registration was successful');
 
     //dd(DB::table('test')->get());
    // return view('post/create');
   // return redirect('posts');
   }
 
+
+  public function delete($id){
+    DB::table('test')->where('id',$id)->delete();
+    return redirect()->back()->with('message', 'Your registration was successfully deleted');
+
+  } 
+
+
+  public function edit($id){
+    $data['test'] = DB::table('test')->where('id',$id)->first();
+    //dd($data);
+    return view('admin.class.edit',$data);
+     }
+
+  public function update(Request $request , $id){
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        DB::table('test')->where('id',$id)->update($data);
+      return redirect()->back()->with('message', 'Your registration was successfully updated');
+
+  }
 
 
 }

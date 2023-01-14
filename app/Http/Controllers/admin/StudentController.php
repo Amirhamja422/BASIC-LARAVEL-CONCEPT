@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class StudentController extends Controller
 {
@@ -15,6 +17,9 @@ class StudentController extends Controller
     public function index()
     {
         //
+        $students=DB::table('students')->orderBy('roll','asc')->get();
+       // dd($students);
+       return view('admin.students.index',compact('students'));
     }
 
     /**
@@ -25,6 +30,7 @@ class StudentController extends Controller
     public function create()
     {
         //
+      return view('admin.students.create');
     }
 
     /**

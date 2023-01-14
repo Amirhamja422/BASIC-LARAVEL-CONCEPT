@@ -99,7 +99,7 @@ Route::get('/', function () {
 ///////////////////////////////////////////////// crud start  fro student table////////////////////////////////////////////
 
 
-route::resource('',[StudentController::class, 'index'])
+Route::resource('students',StudentController::class);
 
 
 

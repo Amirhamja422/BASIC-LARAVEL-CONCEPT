@@ -5,7 +5,9 @@
         </h2>
 
         <br><br>
-        <a href="{{route('class.index')}}" class="btn btn-info">Add Student</a>
+        <a href="{{route('class.create')}}" class="btn btn-info">Add class</a>
+        <a href="{{route('students.index')}}" class="btn btn-info">Add Students</a>
+
 
     </x-slot>
 

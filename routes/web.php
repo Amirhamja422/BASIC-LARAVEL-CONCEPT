@@ -86,7 +86,6 @@ Route::get('create', [CategoryController::class, 'create'])->name('class.create'
 Route::post('store', [CategoryController::class, 'store'])->name('class.store');
 Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('class.delete');
 Route::get('edit/{id}', [CategoryController::class, 'edit'])->name('class.edit');
-
 Route::put('update/{id}', [CategoryController::class, 'update'])->name('class.update');
 
 Route::get('/', function () {

@@ -30,7 +30,8 @@ class StudentController extends Controller
     public function create()
     {
         //
-      return view('admin.students.create');
+      $students = DB::table('test')->get();  
+      return view('admin.students.create',compact('students'));
     }
 
     /**
@@ -42,6 +43,14 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->all());
+        $data['class_id'] = $request->class_id;
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['roll'] = $request->roll;
+        $data['phone'] = $request->phone;
+        DB::table('students')->insert($data);
+        return redirect()->back()->with('success','Students added sucessfully.');
     }
 
     /**
@@ -87,5 +96,6 @@ class StudentController extends Controller
     public function destroy($id)
     {
         //
+      DB::table('students')->where('id', $id)->delete();  
     }
 }

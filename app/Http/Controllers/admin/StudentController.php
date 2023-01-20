@@ -50,7 +50,7 @@ class StudentController extends Controller
         $data['roll'] = $request->roll;
         $data['phone'] = $request->phone;
         DB::table('students')->insert($data);
-        return redirect()->back()->with('success','Students added sucessfully.');
+        return redirect()->route('students.index')->with('success','Students added sucessfully.');
     }
 
     /**
@@ -73,6 +73,11 @@ class StudentController extends Controller
     public function edit($id)
     {
         //
+        $class = DB::table('test')->get();
+        $students = DB::table('students')->where('id',$id)->first();    
+        return view('admin.students.edit',compact('class','students'));
+         return redirect()->route('students.index')->with('success','Students added sucessfully.');
+
     }
 
     /**
@@ -85,6 +90,14 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data['class_id'] = $request->class_id;
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['roll'] = $request->roll;
+        $data['phone'] = $request->phone;
+        DB::table('students')->where('id',$id)->update($data);
+        return redirect()->route('students.index')->with('success','Update successfully');
+
     }
 
     /**

@@ -58,7 +58,7 @@ public function store(Request $request){
         $data['name'] = $request->name;
         $data['email'] = $request->email;
         DB::table('test')->where('id',$id)->update($data);
-      return redirect()->back()->with('message', 'Your registration was successfully updated');
+      return redirect()->route('class.index')->with('message', 'Your registration was successfully updated');
 
   }
 

@@ -47,13 +47,13 @@
                     <td>{{$row->class_id}}</td>
 
                     <td>
-                        <a href="{{route('class.edit',$row->id)}}" class="btn btn-primary">Edit</a>
+                        <a href="{{route('students.edit',$row->id)}}" class="btn btn-primary">Edit</a>
                         <form action="{{route('students.destroy',$row->id)}}"  method="POST">
                             @csrf
                             <input type="hidden" name="_method" value="DELETE">
                             {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
 
-                        <button type="submit" name="_method" value="DELETE"  class="btn btn-sm btn-danger">Delete</button>
+                           <button type="submit" name="_method" value="DELETE"  class="btn btn-sm btn-danger">Delete</button>
                         </form>
 
                     </td>

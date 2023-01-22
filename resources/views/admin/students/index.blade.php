@@ -44,7 +44,7 @@
                     <th>{{$key++}}</th>
                     <td>{{$row->name}}</td>
                     <td>{{$row->email}}</td>
-                    <td>{{$row->class_id}}</td>
+                    <td>{{$row->class_name}}</td>
 
                     <td>
                         <a href="{{route('students.edit',$row->id)}}" class="btn btn-primary">Edit</a>
@@ -61,6 +61,9 @@
                     @endforeach
                 </tbody>
                 </table>
+                {{ $students->links('') }}
+                {{-- {{ $students->links('pagination::bootstrap-4') }} --}}
+
             </div>
         </div>
     </div>

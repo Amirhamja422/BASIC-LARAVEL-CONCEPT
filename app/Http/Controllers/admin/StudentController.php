@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\models\Student;
 
 class StudentController extends Controller
 {
@@ -16,9 +16,22 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
-        $students=DB::table('students')->orderBy('roll','asc')->get();
-       // dd($students);
+    //
+    // $students=DB::table('students')->orderBy('roll','asc')->get();
+
+       // join two tables with the same name and column names and return   
+       $students = DB::table('students')
+       ->join('test', 'students.class_id', 'test.id')->paginate(4);
+    //    ->join('sections', 'class.id', 'section.class_id')->get();
+    //    ->select('users.*', 'contacts.phone', 'orders.price')
+    //    dd($students);
+
+
+    // Eloquent Orm using model binding 
+    $students = Student::all();
+    return response()->json($students);
+    die();
+
        return view('admin.students.index',compact('students'));
     }
 

@@ -31,7 +31,7 @@
                    <label for="class_id">Class Name</label>
                    <select class="form-control" name="class_id" id="class_id" required autocomplete="class_id">
                     @foreach($students as $row)
-                    <option value="{{$row->name}}">{{$row->name}}</option>
+                    <option value="{{$row->id}}">{{$row->class_name}}</option>
                     @endforeach
                    </select>
                 </div>

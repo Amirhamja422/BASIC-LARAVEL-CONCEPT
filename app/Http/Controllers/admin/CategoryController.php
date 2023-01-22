@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
 // for insert
 public function store(Request $request){
-    $data['name'] = $request->name;
+    $data['class_name'] = $request->name;
     $data['email'] = $request->email;
     DB::table('test')->insert($data);
     return redirect()->back()->witH('message', 'Your registration was successful');
@@ -55,7 +55,7 @@ public function store(Request $request){
      }
 
   public function update(Request $request , $id){
-        $data['name'] = $request->name;
+        $data['class_name'] = $request->name;
         $data['email'] = $request->email;
         DB::table('test')->where('id',$id)->update($data);
       return redirect()->route('class.index')->with('message', 'Your registration was successfully updated');

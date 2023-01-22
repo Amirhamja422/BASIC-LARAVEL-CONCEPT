@@ -28,7 +28,7 @@
                     @foreach ($class as $key=>$row )
                     <tr>
                     <th>{{$key++}}</th>
-                    <td>{{$row->name}}</td>
+                    <td>{{$row->class_name}}</td>
                     <td>{{$row->email}}</td>
                     <td>
                         <a href="{{route('class.edit',$row->id)}}" class="btn btn-info">Edit</a>

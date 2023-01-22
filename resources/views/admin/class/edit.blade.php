@@ -25,7 +25,7 @@
             @csrf
             @method("PUT")
                 <label for="name">Name</label>
-                <input type="name"  class="form form-control" id="name" name="name" value="{{  $test->name }}" placeholder="Enter name">
+                <input type="name"  class="form form-control" id="name" name="name" value="{{  $test->class_name }}" placeholder="Enter name">
                 <label for="email">Email</label>
                 <input type="email" class="form form-control" id="email" name="email"  value="{{  $test->email }}" placeholder="Enter email">
                 <br>

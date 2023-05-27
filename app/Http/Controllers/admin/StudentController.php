@@ -28,9 +28,9 @@ class StudentController extends Controller
 
 
     // Eloquent Orm using model binding 
-    $students = Student::all();
-    return response()->json($students);
-    die();
+    // $students = Student::all();
+    // return response()->json($students);
+    // die();
 
        return view('admin.students.index',compact('students'));
     }

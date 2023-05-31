@@ -141,7 +141,7 @@ Route::resource('students',StudentController::class);
     Route::get('post/edit/{id}', 'edit')->name('post.edit');
     Route::put('post/update/{id}', 'update')->name('post.update');
     Route::get('post/delete/{id}', 'delete')->name('post.delete');
-    //learn hunter
+    //learn hunter web 
     Route::get('hunter/contact', 'contact');
     Route::post('hunter/store', 'hunterstore')->name('hunter.store');
 });

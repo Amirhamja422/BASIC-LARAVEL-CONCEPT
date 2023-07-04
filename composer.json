@@ -10,7 +10,7 @@
         "illuminate/database": "^9.47",
         "illuminate/events": "^9.47",
         "laravel/framework": "^9.19",
-        "laravel/sanctum": "^3.0",
+        "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.7"
     },
     "require-dev": {

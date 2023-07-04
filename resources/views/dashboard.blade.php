@@ -23,8 +23,8 @@
         </h2>
 
         <br><br>
-        <a href="{{route('class.index')}}" class="btn btn-info">All Class List</a>
-        <a href="{{route('students.index')}}" class="btn btn-info">All Students List</a>
+        <a href="{{route('admin.class.index')}}" class="btn btn-info">All Class List</a>
+        <a href="{{route('admin.students.index')}}" class="btn btn-info">All Students List</a>
 
 
     </x-slot>

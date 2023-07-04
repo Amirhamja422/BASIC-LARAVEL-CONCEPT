@@ -66,30 +66,30 @@ use Illuminate\Support\Facades\Route;
 
 ///////////////////////////////////////////////// admin portal start ///////////////////////////////////////////////
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';
 
 /////class  crud start/////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('test', [CategoryController::class, 'index'])->name('class.index');
-Route::get('create', [CategoryController::class, 'create'])->name('class.create');
-Route::post('store', [CategoryController::class, 'store'])->name('class.store');
-Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('class.delete');
-Route::get('edit/{id}', [CategoryController::class, 'edit'])->name('class.edit');
-Route::put('update/{id}', [CategoryController::class, 'update'])->name('class.update');
+// Route::get('test', [CategoryController::class, 'index'])->name('class.index');
+// Route::get('create', [CategoryController::class, 'create'])->name('class.create');
+// Route::post('store', [CategoryController::class, 'store'])->name('class.store');
+// Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('class.delete');
+// Route::get('edit/{id}', [CategoryController::class, 'edit'])->name('class.edit');
+// Route::put('update/{id}', [CategoryController::class, 'update'])->name('class.update');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 /////////////////////////////////////////////////class crud end /////////////////////////////////////////////////
 
@@ -97,7 +97,7 @@ Route::get('/', function () {
 ///////////////////////////////////////////////// crud student start////////////////////////////////////////////
 
 
-Route::resource('students',StudentController::class);
+// Route::resource('students',StudentController::class);
 
 
 
@@ -132,18 +132,18 @@ Route::view('/contact', 'frontend.contact')->name('contact');
 
 ///////////////////////////////////////////////// Edit update delete start ////////////////////////////////////////////
 
-    Route::controller(PostController::class)->group(function () {
+//     Route::controller(PostController::class)->group(function () {
   
-    Route::get('posts', 'index')->name('post.index');
-    Route::get('post/create', 'create');
-    Route::post('post/store', 'store')->name('post.store');
-    Route::get('post/show/{id}', 'show')->name('post.show');
-    Route::get('post/edit/{id}', 'edit')->name('post.edit');
-    Route::put('post/update/{id}', 'update')->name('post.update');
-    Route::get('post/delete/{id}', 'delete')->name('post.delete');
-    //learn hunter web 
-    Route::get('hunter/contact', 'contact');
-    Route::post('hunter/store', 'hunterstore')->name('hunter.store');
-});
+//     Route::get('posts', 'index')->name('post.index');
+//     Route::get('post/create', 'create');
+//     Route::post('post/store', 'store')->name('post.store');
+//     Route::get('post/show/{id}', 'show')->name('post.show');
+//     Route::get('post/edit/{id}', 'edit')->name('post.edit');
+//     Route::put('post/update/{id}', 'update')->name('post.update');
+//     Route::get('post/delete/{id}', 'delete')->name('post.delete');
+//     //learn hunter web 
+//     Route::get('hunter/contact', 'contact');
+//     Route::post('hunter/store', 'hunterstore')->name('hunter.store');
+// });
 
 ///////////////////////////////////////////////// edit update delete end ///////////////////////////////////////////////

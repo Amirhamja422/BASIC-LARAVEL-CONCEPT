@@ -65,4 +65,12 @@ class Authcontroller extends Controller
                return response()->json($response); 
         }
     }
+
+
+    public function index()
+    {
+       return  user::all();
+
+}
+
 }

@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\StudentController;
+use App\Http\Controllers\IncomController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -127,13 +128,14 @@ Route::view('/contact', 'frontend.contact')->name('contact');
 ///////////////////////////////////////////////// static web page end ///////////////////////////////////////////////
 
 
+ Route::get('form', [IncomController::class, 'formView'])->name('admin.form');
 
 
 
 ///////////////////////////////////////////////// Edit update delete start ////////////////////////////////////////////
 
 //     Route::controller(PostController::class)->group(function () {
-  
+
 //     Route::get('posts', 'index')->name('post.index');
 //     Route::get('post/create', 'create');
 //     Route::post('post/store', 'store')->name('post.store');
@@ -141,7 +143,7 @@ Route::view('/contact', 'frontend.contact')->name('contact');
 //     Route::get('post/edit/{id}', 'edit')->name('post.edit');
 //     Route::put('post/update/{id}', 'update')->name('post.update');
 //     Route::get('post/delete/{id}', 'delete')->name('post.delete');
-//     //learn hunter web 
+//     //learn hunter web
 //     Route::get('hunter/contact', 'contact');
 //     Route::post('hunter/store', 'hunterstore')->name('hunter.store');
 // });

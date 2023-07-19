@@ -13,10 +13,12 @@
   <body>
     <div class="container">
             <form>
-                <x-input>
-
+                <x-input type="text" name="name" label="name">
                 </x-input>
-
+                <x-input type="text" name="email" label="email" placeholder="Enter">
+                </x-input>
+                <x-input type="password" name="password" label="password">
+                </x-input>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
     </div>

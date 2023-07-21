@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-<body>
-    @livewireStyles()
- {{-- @livewire('counter') --}}
- @livewire('comments')
+    <head>
+        ...
+        @livewireStyles
+    </head>
+    <body>
+        <livewire:comments comment='test'/>
 
- @livewireScripts
-</body>
+        ...
+
+        @livewireScripts
+    </body>
+    </html>
 </html>
 
 

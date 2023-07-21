@@ -21,8 +21,8 @@ class Comments extends Component
     public $newComment;
 
 
-    public function mount(){
-        $this->newComment = 'i am from mounted function';
+    public function mount($comment){
+        $this->newComment = $comment;
 
     }
 

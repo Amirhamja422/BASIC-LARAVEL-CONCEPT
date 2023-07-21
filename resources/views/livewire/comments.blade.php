@@ -11,12 +11,15 @@
     <div class="container">
         <div class="mb-3">
             {{ $newComment }}
+
+        <form wire:submit.prevent="addComment">
             <label for="exampleInputEmail1" class="form-label">New Item</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" wire:model="newComment">
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" wire:model.debounce.500ms="newComment">
 
 
-            <button type="button" class="btn btn-primary btn-lg" wire:click="addComment">Add</button>
-
+            <button type="submit" class="btn btn-primary btn-lg">Add</button>
+            {{-- <button type="button" class="btn btn-primary btn-lg" wire:click="addComment">Add</button> --}}
+        </form>
         </div>
 
         @foreach ($comments as $comment )

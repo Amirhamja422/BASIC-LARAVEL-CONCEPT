@@ -20,6 +20,14 @@ class Comments extends Component
 
     public $newComment;
 
+
+    public function mount(){
+        $this->newComment = 'i am from mounted function';
+
+    }
+
+
+
     public function addComment(){
 
         //used for firstly data show after add
@@ -47,4 +55,7 @@ class Comments extends Component
     {
         return view('livewire.comments');
     }
+
+
+
 }

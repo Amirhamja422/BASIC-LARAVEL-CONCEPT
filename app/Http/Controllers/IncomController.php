@@ -15,4 +15,8 @@ class IncomController extends Controller
         return view('admin.livewireform');
 
     }
+    public function loginView(){
+        return view('admin.loginform');
+
+    }
 }

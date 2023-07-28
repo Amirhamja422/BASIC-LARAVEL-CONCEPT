@@ -130,7 +130,7 @@ Route::view('/contact', 'frontend.contact')->name('contact');
  Route::get('formLive', [IncomController::class, 'liveView'])->name('admin.live');
 
 ##File Upload used in livewired
- Route::get('formLive', [IncomController::class, 'liveView'])->name('admin.live');
+ Route::get('formLogin', [IncomController::class, 'loginView'])->name('admin.login');
 
 
 ///////////////////////////////////////////////// Edit update delete start ////////////////////////////////////////////

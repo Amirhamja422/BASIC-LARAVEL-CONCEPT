@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        ...
-        @livewireStyles
-    </head>
-    <body>
-        <livewire:comments comment='test'/>
+@hasSection ('name')
+    <!DOCTYPE html>
+    <html>
+        <head>
+            ...
+            @livewireStyles
+        </head>
+        <body>
+            <livewire:comments comment='test'/>
 
-        ...
+            ...
 
-        @livewireScripts
-    </body>
+            @livewireScripts
+        </body>
+        </html>
     </html>
-</html>
 
 
+@else
+
+@endif

@@ -21,7 +21,7 @@ class LoginRegister extends Component
 
         Contact::create($validatedData);
 
-        return redirect()->to('/form');
+        return redirect()->to('/formLogin');
     }
     public function render()
     {

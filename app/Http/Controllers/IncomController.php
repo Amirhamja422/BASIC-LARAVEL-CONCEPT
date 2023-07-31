@@ -19,4 +19,9 @@ class IncomController extends Controller
         return view('admin.loginform');
 
     }
+
+    // public function loginViewData(){
+    //     return view('admin.loginform');
+
+    // }
 }

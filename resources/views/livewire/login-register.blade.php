@@ -39,3 +39,32 @@
     <button type="submit" class="btn btn-primary">Save Contact</button>
 
 </form>
+<div class="container">
+    <h2>Contact List</h2>
+
+    <table class="table" style="width:70%;">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Body</th>
+      </tr>
+    </thead>
+      <tbody>
+      @foreach ($contacts as $contact)
+
+        <tr>
+            <td>{{ $contact['id'] }}</td>
+            <td>{{ $contact['name'] }}</td>
+            <td>{{ $contact['email'] }}</td>
+            <td>{{ $contact['body'] }}</td>
+
+        </tr>
+
+      @endforeach
+    </tbody>
+</table>
+</div>
+
+
+  </div>

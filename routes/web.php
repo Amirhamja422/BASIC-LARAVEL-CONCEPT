@@ -131,10 +131,12 @@ Route::view('/contact', 'frontend.contact')->name('contact');
 
 ##File Upload used in livewired
  Route::get('formLogin', [IncomController::class, 'loginView'])->name('admin.login');
+//  Route::post('logView', [IncomController::class, 'loginViewData'])->name('admin.logView');
+
 
  ## Jetstream Livewire CRUD with Tailwind Modal
 
- Route::get('formLogin', [IncomController::class, ''])->name('admin.test');
+//  Route::get('formLogin', [IncomController::class, ''])->name('admin.test');
 
 
 ///////////////////////////////////////////////// Edit update delete start ////////////////////////////////////////////

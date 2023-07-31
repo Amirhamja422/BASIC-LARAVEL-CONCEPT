@@ -23,6 +23,14 @@ class LoginRegister extends Component
 
         return redirect()->to('/formLogin');
     }
+
+    public $contacts;
+    public function mount(){
+     $this->contacts = Contact::all();
+    }
+
+
+
     public function render()
     {
         return view('livewire.login-register');

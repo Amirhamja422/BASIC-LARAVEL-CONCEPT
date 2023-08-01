@@ -33,9 +33,6 @@
         @error('body') <span class="text-danger">{{ $message }}</span> @enderror
 
     </div>
-
-
-
     <button type="submit" class="btn btn-primary">Save Contact</button>
 
 </form>
@@ -48,6 +45,9 @@
           <th>Name</th>
           <th>Email</th>
           <th>Body</th>
+          <th>Action</th>
+          <th></th>
+          <th></th>
       </tr>
     </thead>
       <tbody>
@@ -58,6 +58,9 @@
             <td>{{ $contact['name'] }}</td>
             <td>{{ $contact['email'] }}</td>
             <td>{{ $contact['body'] }}</td>
+            <td class="border px-4 py-2">
+                <button type="button" wire:click="deleteId({{ $contact['id'] }})" class="btn btn-danger">Delete</button>
+            </td>
 
         </tr>
 
@@ -66,5 +69,3 @@
 </table>
 </div>
 
-
-  </div>

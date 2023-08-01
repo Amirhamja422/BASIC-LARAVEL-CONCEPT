@@ -31,22 +31,13 @@
         {{-- Laravel Livewire --}}
 
       </div>
-
       <div class="card-body" style="padding: 101px;border: 12px solid black;border-radius: 20px;margin-top: 27px;">
                 @livewire('login-register')
 
       </div>
 
     </div>
-
-
-
 </div>
-
-
-
-
-
 </body>
 
 <script src="{{ asset('js/app.js') }}"></script>

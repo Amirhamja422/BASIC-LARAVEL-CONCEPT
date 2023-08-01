@@ -31,8 +31,17 @@ class LoginRegister extends Component
 
 
 
+
     public function render()
     {
         return view('livewire.login-register');
     }
+
+    public function deleteId($id){
+       Contact::find($id)->delete();
+       return redirect()->to('/formLogin');
+
+    //    $this>mount();
+    }
+
 }

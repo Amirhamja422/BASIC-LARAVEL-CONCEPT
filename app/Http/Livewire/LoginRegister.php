@@ -44,4 +44,13 @@ class LoginRegister extends Component
     //    $this>mount();
     }
 
+    public function contactEdit($id){
+        // Contact::find($id)->delete
+        return($id);
+        // return redirect()->to('/formLogin');
+
+     //    $this>mount();
+     }
+
+
 }

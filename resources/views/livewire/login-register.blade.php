@@ -1,4 +1,4 @@
-<form wire:submit.prevent="submit">
+{{-- <form wire:submit.prevent="submit">
 
     <div class="form-group">
 
@@ -35,7 +35,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Save Contact</button>
 
-</form>
+</form> --}}
 <div class="container">
     <h2>Contact List</h2>
 
@@ -60,6 +60,8 @@
             <td>{{ $contact['body'] }}</td>
             <td class="border px-4 py-2">
                 <button type="button" wire:click="deleteId({{ $contact['id'] }})" class="btn btn-danger">Delete</button>
+                <button type="button" wire:click="contactEdit({{ $contact['id'] }})" class="btn btn-danger">Edit</button>
+
             </td>
 
         </tr>

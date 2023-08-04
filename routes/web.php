@@ -2,6 +2,7 @@
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\StudentController;
 use App\Http\Controllers\IncomController;
+use App\Http\Controllers\mainController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -136,7 +137,7 @@ Route::view('/contact', 'frontend.contact')->name('contact');
 
  ## Jetstream Livewire CRUD with Tailwind Modal
 
-//  Route::get('formLogin', [IncomController::class, ''])->name('admin.test');
+ Route::get('/countries', [mainController::class, 'index'])->name('admin.test');
 
 
 ///////////////////////////////////////////////// Edit update delete start ////////////////////////////////////////////

@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form wire:submit.prevent="save">
 
                 <div class="mb-3">
                   <label for="exampleInput" class="form-label">Continent</label>
@@ -25,20 +25,20 @@
 
                 <div class="mb-3">
                   <label for="exampleInput" class="form-label">Country Name</label>
-                  <input type="text" class="form-control" id="country_name"  name="country_name" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="country_name"  name="country_name" aria-describedby="emailHelp" wire:model="country_name">
                 </div>
 
                 <div class="mb-3">
                   <label for="exampleInput" class="form-label">Capital City</label>
-                  <input type="text" class="form-control" id="capital_city" name="capital_city" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="capital_city" name="capital_city" aria-describedby="emailHelp" wire:model="capital_city">
                 </div>
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </div>
               </form>
             </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+
       </div>
     </div>
   </div>

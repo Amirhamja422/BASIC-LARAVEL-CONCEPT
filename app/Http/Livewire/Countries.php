@@ -21,16 +21,27 @@ class Countries extends Component
     public function save(){
     // dd('hi');
     $this->validate([
-      'continent'=>'required',
-      'country_name'=>'required',
-      'capital_city'=>'required'
+        'continent'=>'required',
+        'country_name'=>'required|unique:countries',
+        'capital_city'=>'required'
+   ]);
 
-    ]);
+
+   $save =Country::insert([
+      'continent_id'=>$this->continent,
+      'country_name'=>$this->country_name,
+      'capital_city'=>$this->capital_city
+     ]);
+
+
+     if($save){
+      $this->dispatchBrowserEvent('CloseAddCountryModel');
+     }
+
+
     }
 
     public function OpenAddCountryModel(){
-    //   dd('ji');
-
     $this->dispatchBrowserEvent('OpenAddCountryModel');
     }
 }

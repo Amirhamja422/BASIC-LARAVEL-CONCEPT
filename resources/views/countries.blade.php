@@ -23,7 +23,17 @@
   <script>
      window.addEventListener('OpenAddCountryModel',function(){
         // alert('hi');
+        $('.addCountry').find('form')[0].reset();
         $('.addCountry').modal('show');
+
+     });
+
+
+     window.addEventListener('CloseAddCountryModel',function(){
+        // alert('hi');
+        $('.addCountry').find('form')[0].reset();
+        $('.addCountry').modal('hide');
+        alert('New country added successfully');
 
      });
   </script>

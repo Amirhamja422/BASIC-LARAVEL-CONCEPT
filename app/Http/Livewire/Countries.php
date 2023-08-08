@@ -71,7 +71,23 @@ class Countries extends Component
         'up_continent'=>'required',
         'up_country_name'=>'required|unique:countries,country_name,'.$cid,
         'up_capital_city'=>'required'
+     ],[
+       'up_continent.required'=>'You must select continent',
+       'up_country_name.required'=>'You must select country name',
+       'up_capital_city.required'=>'You must select capital city',
+
      ]);
+
+      $update =Country::find($cid)->update([
+      'continent_id'=>$this->up_continent,
+      'country_name'=>$this->up_country_name,
+      'capital_city'=>$this->up_capital_city
+      ]);
+
+      if($update){
+        $this->dispatchBrowserEvent('CloseEditCountryModel');
+       }
+
     }
 
     ## delete start

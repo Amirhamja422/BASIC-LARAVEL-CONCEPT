@@ -48,6 +48,17 @@
      });
 
 
+     window.addEventListener('CloseEditCountryModel',function(){
+        // alert('hi');
+        $('.addEidtCountry').find('span').html('');
+        $('.addEidtCountry').find('form')[0].reset();
+        $('.addEidtCountry').modal('hide');
+        alert('New country Updated successfully');
+
+     });
+
+
+
   </script>
 </body>
 </html>

@@ -12,6 +12,8 @@ class Countries extends Component
 {
     public $continent, $country_name, $capital_city;
     public $up_continent, $up_country_name, $up_capital_city,$cid;
+     protected $listeners = ['delete'];
+
     public function render()
     {
         return view('livewire.countries',[
@@ -91,8 +93,24 @@ class Countries extends Component
     }
 
     ## delete start
-    public function deleteConfirm(){
+    public function deleteConfirm($id){
+        // dd($id);
+      $info =Country::find($id);
+      $this->dispatchBrowserEvent('SwalConfirm',[
+        'title' => 'Are You sure',
+        'You want to delete <strong>'.$info->country_name.'</strong>',
+        'id'=>$id
 
+      ]);
+
+    }
+
+    public function delete($id){
+    $del =  Country::find($id)->delete();
+     if($del){
+        $this->dispatchBrowserEvent('deleted');
+
+     }
     }
 
 }

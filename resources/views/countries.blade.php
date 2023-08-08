@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 5 Example</title>
+  <title>LIVEWIRE CRUD</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +23,7 @@
   <script>
      window.addEventListener('OpenAddCountryModel',function(){
         // alert('hi');
+        $('.addCountry').find('span').html('');
         $('.addCountry').find('form')[0].reset();
         $('.addCountry').modal('show');
 
@@ -31,11 +32,22 @@
 
      window.addEventListener('CloseAddCountryModel',function(){
         // alert('hi');
+        $('.addCountry').find('span').html('');
         $('.addCountry').find('form')[0].reset();
         $('.addCountry').modal('hide');
         alert('New country added successfully');
 
      });
+
+
+     window.addEventListener('OpenEditCountryModal',function(event){
+    //  alert(event.detail.id);
+    $('.addEidtCountry').find('span').html('');
+     $('.addEidtCountry').modal('show');
+
+     });
+
+
   </script>
 </body>
 </html>

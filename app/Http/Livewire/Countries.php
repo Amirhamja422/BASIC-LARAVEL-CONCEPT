@@ -6,9 +6,12 @@ use App\Models\Country;
 
 use Livewire\Component;
 
+
+## view page
 class Countries extends Component
 {
     public $continent, $country_name, $capital_city;
+    public $up_continent, $up_country_name, $up_capital_city,$cid;
     public function render()
     {
         return view('livewire.countries',[
@@ -18,6 +21,8 @@ class Countries extends Component
     }
 
 
+
+    ## Insert start
     public function save(){
     // dd('hi');
     $this->validate([
@@ -37,11 +42,41 @@ class Countries extends Component
      if($save){
       $this->dispatchBrowserEvent('CloseAddCountryModel');
      }
-
-
     }
 
     public function OpenAddCountryModel(){
+     $this->continent ="";
+     $this->country_name ="";
+     $this->capital_city ="";
+
     $this->dispatchBrowserEvent('OpenAddCountryModel');
     }
+
+    ## update start
+    public function OpenEditCountryModal($id){
+        $info =Country::find($id);
+        $this->up_continent = $info->continent_id;
+        $this->up_country_name = $info->country_name;
+        $this->up_capital_city = $info->capital_city;
+        $this->cid = $info->id;
+        $this->dispatchBrowserEvent('OpenEditCountryModal',[
+            'id'=> $id
+        ]);
+    }
+
+
+    public function update(){
+     $cid = $this->cid;
+     $this->validate([
+        'up_continent'=>'required',
+        'up_country_name'=>'required|unique:countries,country_name,'.$cid,
+        'up_capital_city'=>'required'
+     ]);
+    }
+
+    ## delete start
+    public function deleteConfirm(){
+
+    }
+
 }

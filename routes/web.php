@@ -137,7 +137,11 @@ Route::view('/contact', 'frontend.contact')->name('contact');
 
  ## Jetstream Livewire CRUD with Tailwind Modal
 
- Route::get('/countries', [mainController::class, 'index'])->name('admin.test');
+//  Route::get('/countries', [mainController::class, 'index'])->name('admin.test');
+
+ ## spatie permission for laravel
+
+
 
 
 ///////////////////////////////////////////////// Edit update delete start ////////////////////////////////////////////

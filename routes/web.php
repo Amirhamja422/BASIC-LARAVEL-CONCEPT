@@ -117,21 +117,21 @@ use Illuminate\Support\Facades\Route;
 //     return 'Hello World';
 // });
 
-Route::view('/', 'frontend.dashboard')->name('home');
-Route::view('/about', 'frontend.about')->name('about');
-Route::view('/service', 'frontend.service')->name('service');
-Route::view('/portfolio', 'frontend.portfolio')->name('portfolio');
-Route::view('/contact', 'frontend.contact')->name('contact');
+// Route::view('/', 'frontend.dashboard')->name('home');
+// Route::view('/about', 'frontend.about')->name('about');
+// Route::view('/service', 'frontend.service')->name('service');
+// Route::view('/portfolio', 'frontend.portfolio')->name('portfolio');
+// Route::view('/contact', 'frontend.contact')->name('contact');
 
 
 ///////////////////////////////////////////////// static web page end ///////////////////////////////////////////////
 
 
- Route::get('form', [IncomController::class, 'formView'])->name('admin.form');
- Route::get('formLive', [IncomController::class, 'liveView'])->name('admin.live');
+//  Route::get('form', [IncomController::class, 'formView'])->name('admin.form');
+//  Route::get('formLive', [IncomController::class, 'liveView'])->name('admin.live');
 
 ##File Upload used in livewired
- Route::get('formLogin', [IncomController::class, 'loginView'])->name('admin.login');
+//  Route::get('formLogin', [IncomController::class, 'loginView'])->name('admin.login');
 //  Route::post('logView', [IncomController::class, 'loginViewData'])->name('admin.logView');
 
 
@@ -161,3 +161,10 @@ Route::view('/contact', 'frontend.contact')->name('contact');
 // });
 
 ///////////////////////////////////////////////// edit update delete end ///////////////////////////////////////////////
+
+
+///////////////////////////////////////////////// crud image start ////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////// crud image end /////////////////////////////////////////////////////

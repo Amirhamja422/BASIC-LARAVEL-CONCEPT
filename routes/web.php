@@ -5,6 +5,7 @@ use App\Http\Controllers\IncomController;
 use App\Http\Controllers\mainController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -168,3 +169,12 @@ use Illuminate\Support\Facades\Route;
 
 
 ///////////////////////////////////////////////// crud image end /////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////// graph start ////////////////////////////////////////////////////
+
+  Route::get('/chart', [ChartController::class, 'LinearChart'])->name('admin.linearChart');
+
+
+
+/////////////////////////////////////////////////graph end /////////////////////////////////////////////////////

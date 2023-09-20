@@ -8,7 +8,7 @@
 
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
-            ['Year', 'Sales', 'Expenses'],
+            ['Year', 'Sales', 'Expenses','profit'],
 
             <?php echo $data;?>
 

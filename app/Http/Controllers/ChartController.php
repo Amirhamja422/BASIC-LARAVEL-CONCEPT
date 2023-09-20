@@ -11,14 +11,15 @@ class ChartController extends Controller
     ->leftJoin('sales_master', 'sales_master.store_id', '=', 'store_master.id')
     ->leftJoin('expense_master', 'expense_master.store_id', '=', 'store_master.id')
     ->groupBy('store_master.id')
-    ->select('store_master.name', DB::raw('SUM(sales_master.ammount) AS sales'), DB::raw('SUM(expense_master.ammount) AS expense'))
+    ->select('store_master.name', DB::raw('SUM(sales_master.ammount) AS sales'), DB::raw('SUM(expense_master.ammount) AS expense'),DB::raw('SUM(sales_master.ammount) - SUM(expense_master.ammount) AS profit'))
     ->get();
     $data ="";
     foreach($results as $val){
-     $data .= "['".$val->name."',".$val->sales.", ".$val->expense."],";
+     $data .= "['".$val->name."',".$val->sales.", ".$val->expense.", ".$val->profit."],";
     }
     // dd($data);
     return view('line-chart',compact('data'));
 
    }
 }
+

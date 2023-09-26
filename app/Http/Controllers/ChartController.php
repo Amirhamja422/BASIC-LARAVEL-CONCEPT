@@ -21,5 +21,13 @@ class ChartController extends Controller
     return view('line-chart',compact('data'));
 
    }
+
+   function cartView(){
+
+    return view('shopping_cart');
+
+   }
+
+
 }
 
